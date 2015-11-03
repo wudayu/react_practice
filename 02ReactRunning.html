@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>React running</title>
+  <script src="js/react.min.js"></script>
+  <script src="js/JSXTransformer.js"></script>
+</head>
+<body>
+<script type="text/jsx">
+  var ReactRunning = React.createClass({
+    render: function() {
+      var subMilliPassed = Math.round(this.props.milliPassed / 10);
+      return <p>
+        React has been running for {subMilliPassed / 100} seconds;
+      </p>
+    }
+  });
+  var start = new Date().getTime();
+  setInterval(function() {
+    React.render(<ReactRunning milliPassed={new Date().getTime() - start}></ReactRunning>, document.body);
+  }, 50);
+</script>
+</body>
+</html>
