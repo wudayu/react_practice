@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Hello React</title>
+    <script src="js/react.min.js"></script>
+    <script src="js/JSXTransformer.js"></script>
+  </head>
+  <body>
+    <script type="text/jsx">
+      var HelloWorld = React.createClass({
+        render: function () {
+          return <div>
+            <p>Nice to meet u, React</p>
+            <p>Hello {this.props.name}
+              AND {this.props.children}</p>
+          </div>
+        }
+      });
+      React.render(<HelloWorld name="Syndica">Dracarys</HelloWorld>, document.body);
+    </script>
+  </body>
+</html>
