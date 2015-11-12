@@ -15,7 +15,7 @@ var Lifecycle = React.createClass({
     handleClick: function (event) {
         console.log("handleClick: 0x000");
         this.setState({
-            variableA: (this.state.variableA + "1"),
+            variableA: (this.state.variableA + "1")
         });
     },
     render: function () {
@@ -31,16 +31,16 @@ var Lifecycle = React.createClass({
     componentWillReceiveProps: function () {
         console.log("componentWillReceiveProps: 0x101");
     },
-    //shouldComponentUpdate: function () {
-    //    console.log("shouldComponentUpdate: 0x102");
-    //    return true;
-    //},
+    shouldComponentUpdate: function () {
+        console.log("shouldComponentUpdate: 0x102");
+        return true;
+    },
     componentWillUpdate: function () {
         console.log("componentWillUpdate: 0x103");
     },
     componentDidUpdate: function () {
         console.log("componentDidUpdate: 0x105");
-    },
+    }
 });
 
 React.render(<Lifecycle></Lifecycle>, document.getElementById("container"));
